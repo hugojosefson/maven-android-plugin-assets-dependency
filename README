@@ -1,3 +1,6 @@
 This is in regards to this thread on the Maven Android Developers mailinglist:
 http://groups.google.com/group/maven-android-developers/browse_thread/thread/eab4aaefc531e3d3
 "Apk missing dependent libraries"
+
+assets-dependency-asset  - A jar which contains the asset(s).
+assets-dependency-app    - An Android application which depends on the asset.
