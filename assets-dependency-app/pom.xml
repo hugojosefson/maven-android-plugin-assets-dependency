@@ -41,11 +41,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- alternative: comment out this dependency tag,
+                          and un-comment the maven-dependency-plugin below instead -->
         <dependency>
             <groupId>com.jayway.maven.plugins.android.generation2.samples.assets-dependency</groupId>
             <artifactId>assets-dependency-asset</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
     
     <build>
@@ -72,6 +75,8 @@
                     <target>1.5</target>
                 </configuration>
             </plugin>
+            <!-- alternative: comment out the dependency tag above,
+                              and un-comment this plugin tag -->
 <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -79,12 +84,12 @@
                 <executions>
                     <execution>
                         <id>unpack</id>
-                        <phase>package</phase>
+                        <phase>generate-resources</phase>
                         <goals>
                             <goal>unpack</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+                            <outputDirectory>${project.build.directory}/classes/assets</outputDirectory>
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>com.jayway.maven.plugins.android.generation2.samples.assets-dependency</groupId>
